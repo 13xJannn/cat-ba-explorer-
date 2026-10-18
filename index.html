@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cát Bà Explorer - cẩm nang khám phá quần đảo Cát Bà, Hải Phòng.">
+  <title>Cát Bà Explorer | Khám phá miền xanh</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#home" class="logo">
+    <span class="logo-icon">🌊</span>
+    <span>CÁT BÀ <b>EXPLORER</b></span>
+  </a>
+
+  <button class="menu-button" id="menuButton" aria-label="Mở menu">☰</button>
+
+  <nav id="navigation">
+    <a href="#destinations" data-i18n="destinations">Điểm đến</a>
+    <a href="#experiences" data-i18n="experiences">Trải nghiệm</a>
+    <a href="#food" data-i18n="food">Ẩm thực</a>
+    <a href="#planner" data-i18n="planner">Lịch trình</a>
+    <a href="#guide" data-i18n="guide">Cẩm nang</a>
+  </nav>
+
+  <select id="language" aria-label="Chọn ngôn ngữ">
+    <option value="vi">🇻🇳 Tiếng Việt</option>
+    <option value="en">🇬🇧 English</option>
+    <option value="zh">🇨🇳 中文</option>
+    <option value="ja">🇯🇵 日本語</option>
+    <option value="ko">🇰🇷 한국어</option>
+    <option value="fr">🇫🇷 Français</option>
+    <option value="es">🇪🇸 Español</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="ru">🇷🇺 Русский</option>
+    <option value="th">🇹🇭 ไทย</option>
+  </select>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow" data-i18n="eyebrow">DI SẢN THIÊN NHIÊN · HẢI PHÒNG</span>
+      <h1 data-i18n="heroTitle">Chạm vào<br><em>miền xanh</em><br>Cát Bà.</h1>
+      <p data-i18n="heroText">
+        Khám phá những vịnh biển xanh, núi đá vôi kỳ vĩ, rừng nguyên sinh
+        và nhịp sống bình yên của người dân đảo.
+      </p>
+      <div class="hero-buttons">
+        <a href="#destinations" class="button primary" data-i18n="explore">Khám phá ngay ↗</a>
+        <a href="#planner" class="button secondary" data-i18n="makePlan">Lên lịch trình</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>366</strong><span data-i18n="islands">đảo lớn nhỏ</span></div>
+        <div><strong>UNESCO</strong><span data-i18n="heritage">Di sản thế giới</span></div>
+        <div><strong>4 mùa</strong><span data-i18n="seasons">Nhiều trải nghiệm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <form id="searchForm" class="search-box">
+      <div>
+        <label for="searchInput" data-i18n="searchLabel">Bạn muốn tìm gì?</label>
+        <input id="searchInput" type="search"
+          placeholder="Tên địa điểm, hoạt động..." data-i18n-placeholder="searchPlaceholder">
+      </div>
+      <div>
+        <label for="areaFilter" data-i18n="areaLabel">Khu vực</label>
+        <select id="areaFilter">
+          <option value="all" data-i18n="allAreas">Tất cả khu vực</option>
+          <option value="Thị trấn Cát Bà">Thị trấn Cát Bà</option>
+          <option value="Gia Luận">Gia Luận</option>
+          <option value="Phù Long">Phù Long</option>
+          <option value="Xuân Đám">Xuân Đám</option>
+          <option value="Khe Sâu">Khe Sâu</option>
+          <option value="Trân Châu">Trân Châu</option>
+          <option value="Việt Hải">Việt Hải</option>
+          <option value="Hiền Hào">Hiền Hào</option>
+        </select>
+      </div>
+      <button class="button primary" type="submit" data-i18n="searchButton">Tìm kiếm ↗</button>
+    </form>
+  </section>
+
+  <section class="section" id="destinations">
+    <div class="section-heading">
+      <span class="eyebrow">EXPLORE CAT BA</span>
+      <h2 data-i18n="destTitle">Mỗi vùng đất, một câu chuyện.</h2>
+      <p data-i18n="destText">Chọn một khu vực để khám phá cảnh quan, hoạt động, gợi ý lưu trú và bản đồ.</p>
+    </div>
+    <div class="destination-grid" id="destinationGrid"></div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-image"></div>
+    <div class="about-content">
+      <span class="eyebrow" data-i18n="aboutEyebrow">VẺ ĐẸP THIÊN NHIÊN</span>
+      <h2 data-i18n="aboutTitle">Một di sản sống cần được gìn giữ.</h2>
+      <p data-i18n="aboutText">
+        Quần đảo Cát Bà nổi bật với cảnh quan núi đá vôi, hệ sinh thái biển
+        và rừng phong phú. Du lịch có trách nhiệm giúp bảo vệ thiên nhiên
+        và sinh kế của cộng đồng địa phương.
+      </p>
+      <ul>
+        <li data-i18n="eco1">Mang bình nước cá nhân, hạn chế nhựa dùng một lần.</li>
+        <li data-i18n="eco2">Không xả rác, lấy san hô hoặc làm phiền động vật hoang dã.</li>
+        <li data-i18n="eco3">Tuân thủ hướng dẫn tại vườn quốc gia và khu bảo tồn.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="experiences">
+    <div class="section-heading">
+      <span class="eyebrow">MAKE MEMORIES</span>
+      <h2 data-i18n="experienceTitle">Trải nghiệm đáng nhớ</h2>
+    </div>
+    <div class="experience-grid">
+      <article class="experience-card">
+        <div class="experience-icon">🛶</div>
+        <h3 data-i18n="exp1Title">Du ngoạn vịnh Lan Hạ</h3>
+        <p data-i18n="exp1Text">Ngắm núi đá vôi, làng chài và các bãi biển nhỏ. Kiểm tra thời tiết và lịch tàu trước khi đi.</p>
+      </article>
+      <article class="experience-card">
+        <div class="experience-icon">🌳</div>
+        <h3 data-i18n="exp2Title">Khám phá rừng</h3>
+        <p data-i18n="exp2Text">Tìm hiểu hệ sinh thái Vườn quốc gia Cát Bà theo tuyến được phép và hướng dẫn phù hợp.</p>
+      </article>
+      <article class="experience-card">
+        <div class="experience-icon">🏖️</div>
+        <h3 data-i18n="exp3Title">Tắm biển</h3>
+        <p data-i18n="exp3Text">Thư giãn tại những bãi biển mở cửa, tuân thủ biển báo và hướng dẫn an toàn.</p>
+      </article>
+      <article class="experience-card">
+        <div class="experience-icon">🚲</div>
+        <h3 data-i18n="exp4Title">Khám phá làng quê</h3>
+        <p data-i18n="exp4Text">Tìm hiểu đời sống địa phương, thưởng thức món ăn và đi chậm giữa cảnh quan xanh.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section food-section" id="food">
+    <div class="section-heading">
+      <span class="eyebrow">LOCAL FLAVOURS</span>
+      <h2 data-i18n="foodTitle">Hương vị Cát Bà</h2>
+      <p data-i18n="foodText">Hỏi rõ giá theo cân, phí chế biến và tổng tiền trước khi gọi món.</p>
+    </div>
+    <div class="food-grid">
+      <article class="food-card">
+        <div class="food-emoji">🦀</div>
+        <h3 data-i18n="food1Title">Hải sản tươi</h3>
+        <p data-i18n="food1Text">Ghẹ, bề bề, mực, cá biển và các loại hải sản theo mùa.</p>
+      </article>
+      <article class="food-card">
+        <div class="food-emoji">🍲</div>
+        <h3 data-i18n="food2Title">Món địa phương</h3>
+        <p data-i18n="food2Text">Khám phá các món ăn địa phương tại cơ sở có thông tin giá rõ ràng.</p>
+      </article>
+      <article class="food-card">
+        <div class="food-emoji">🥬</div>
+        <h3 data-i18n="food3Title">Bữa ăn theo mùa</h3>
+        <p data-i18n="food3Text">Kết hợp hải sản, rau xanh và những món phù hợp khẩu vị của bạn.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="planner-section section" id="planner">
+    <div class="planner-intro">
+      <span class="eyebrow" data-i18n="plannerEyebrow">YOUR TRIP, YOUR WAY</span>
+      <h2 data-i18n="plannerTitle">Thiết kế chuyến đi của riêng bạn.</h2>
+      <p data-i18n="plannerText">Tạo lịch trình gợi ý và dự toán sơ bộ. Đây không phải báo giá chính thức.</p>
+    </div>
+    <form id="plannerForm" class="planner-form">
+      <label>
+        <span data-i18n="duration">Thời lượng</span>
+        <select id="days">
+          <option value="1" data-i18n="day1">1 ngày</option>
+          <option value="2" selected data-i18n="day2">2 ngày 1 đêm</option>
+          <option value="3" data-i18n="day3">3 ngày 2 đêm</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="people">Số người</span>
+        <input id="people" type="number" min="1" max="30" value="2" required>
+      </label>
+      <label>
+        <span data-i18n="travelStyle">Phong cách</span>
+        <select id="travelStyle">
+          <option value="budget" data-i18n="budget">Tiết kiệm</option>
+          <option value="comfort" selected data-i18n="comfort">Thoải mái</option>
+          <option value="nature" data-i18n="nature">Thiên nhiên</option>
+        </select>
+      </label>
+      <button type="submit" class="button primary" data-i18n="createPlan">Tạo lịch trình ↗</button>
+      <div id="planResult" class="plan-result" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="section-heading">
+      <span class="eyebrow">TRAVEL SMART</span>
+      <h2 data-i18n="guideTitle">Cẩm nang trước chuyến đi</h2>
+    </div>
+    <div class="guide-grid">
+      <article><span>🚢</span><h3 data-i18n="guide1Title">Di chuyển</h3><p data-i18n="guide1Text">Kiểm tra lịch phà, phương tiện trung chuyển và thời gian di chuyển trước khi khởi hành.</p><a href="https://haiphong.gov.vn/" target="_blank" rel="noopener">Cổng thông tin Hải Phòng ↗</a></article>
+      <article><span>🛏️</span><h3 data-i18n="guide2Title">Khách sạn & homestay</h3><p data-i18n="guide2Text">Trung tâm thuận tiện ăn uống; vùng làng quê có thể yên tĩnh hơn. Xác nhận địa chỉ, giá cuối cùng, tiện ích và chính sách hủy.</p><a href="https://www.booking.com/" target="_blank" rel="noopener">Tìm nơi lưu trú ↗</a></article>
+      <article><span>🌦️</span><h3 data-i18n="guide3Title">Thời tiết</h3><p data-i18n="guide3Text">Gió lớn hoặc mưa có thể làm thay đổi hoạt động biển. Kiểm tra dự báo và thông báo của nhà cung cấp.</p><a href="https://www.nchmf.gov.vn/" target="_blank" rel="noopener">Dự báo thời tiết ↗</a></article>
+      <article><span>💰</span><h3 data-i18n="guide4Title">Ngân sách</h3><p data-i18n="guide4Text">Dự trù chi phí đi lại, phòng nghỉ, ăn uống và vé hoạt động. Giá thực tế thay đổi theo mùa và dịch vụ.</p></article>
+    </div>
+    <p class="disclaimer" data-i18n="disclaimer">
+      Lưu ý: Website không đặt phòng hoặc bán vé. Thông tin giá, lịch trình và hoạt động cần được xác nhận trực tiếp với nhà cung cấp.
+      Các tên khu vực cũ được dùng để định vị du lịch; hãy xác nhận địa chỉ hành chính hiện hành khi đặt dịch vụ.
+    </p>
+  </section>
+
+  <section class="section faq-section">
+    <div class="section-heading">
+      <span class="eyebrow">FAQ</span>
+      <h2 data-i18n="faqTitle">Câu hỏi thường gặp</h2>
+    </div>
+    <details>
+      <summary data-i18n="faq1q">Nên đi Cát Bà mấy ngày?</summary>
+      <p data-i18n="faq1a">Hai ngày một đêm phù hợp để kết hợp trung tâm, biển và một hoạt động chính. Nếu muốn khám phá thêm rừng và làng quê, có thể dành ba ngày hai đêm.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq2q">Có nên đặt phòng trước?</summary>
+      <p data-i18n="faq2a">Nên đặt trước vào cuối tuần, mùa hè và dịp lễ. Kiểm tra tổng giá, phụ thu và chính sách hủy.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq3q">Vịnh Lan Hạ có luôn hoạt động?</summary>
+      <p data-i18n="faq3a">Không. Thời tiết, an toàn và quy định có thể làm thay đổi hoặc hủy chuyến. Xác nhận với đơn vị vận hành trước khi đi.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">🌊 CÁT BÀ EXPLORER</div>
+  <p data-i18n="footerText">Cẩm nang khám phá thiên nhiên, văn hóa và ẩm thực Cát Bà.</p>
+  <p>© 2026 Cát Bà Explorer · <span data-i18n="footerNote">Thông tin tham khảo, không phải cổng đặt dịch vụ.</span></p>
+</footer>
+
+<button class="chat-toggle" id="chatToggle">✦ <span data-i18n="chatButton">Hỏi trợ lý du lịch</span></button>
+<aside class="chat-panel" id="chatPanel" aria-label="Trợ lý du lịch">
+  <div class="chat-header">
+    <div><strong>Cát Bà Guide</strong><small data-i18n="chatSubtitle">Trợ lý hỏi đáp mẫu</small></div>
+    <button id="chatClose" aria-label="Đóng">×</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="message bot" data-i18n="chatWelcome">Xin chào! Bạn có thể hỏi về lịch trình, nơi ở, ẩm thực hoặc cách di chuyển.</div>
+  </div>
+  <div class="quick-questions">
+    <button data-question="Gợi ý lịch trình 2 ngày 1 đêm">2 ngày 1 đêm</button>
+    <button data-question="Nên ở khu vực nào?">Nơi lưu trú</button>
+    <button data-question="Ước tính ngân sách">Ngân sách</button>
+  </div>
+  <form id="chatForm" class="chat-form">
+    <input id="chatInput" placeholder="Nhập câu hỏi..." data-i18n-placeholder="chatPlaceholder" autocomplete="off">
+    <button type="submit" aria-label="Gửi">➤</button>
+  </form>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
